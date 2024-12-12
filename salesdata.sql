@@ -62,9 +62,8 @@ SELECT DATE_FORMAT(sale_date, '%Y-%m') AS month, SUM(total_amount) AS monthly_re
 FROM sales
 GROUP BY month
 ORDER BY month;
+
 -- Customer Segmentation:
-
-
 SELECT c.customer_id, c.first_name, c.last_name, SUM(s.total_amount) AS total_spent
 FROM sales s
 JOIN customers c ON s.customer_id = c.customer_id
